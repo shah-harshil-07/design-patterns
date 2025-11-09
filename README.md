@@ -1,6 +1,3 @@
-# design-patterns
-Sample Java code of all the design patterns. You'll find here Creational, Structural and Behavioral design pattern's sample code written in Java. 
-
 # 🎨 Design Patterns in Java
 
 This repository contains simple and well-structured examples of **all major design patterns in Java** — each implemented in its own package for clarity and ease of understanding.
