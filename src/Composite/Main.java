@@ -7,18 +7,20 @@ interface CartItem {
 
 // Represents a single product
 class Product implements CartItem {
-    private String name;
-    private double price;
+    private final String name;
+    private final double price;
 
     public Product(String name, double price) {
         this.name = name;
         this.price = price;
     }
 
+    @Override
     public double getPrice() {
         return price;
     }
 
+    @Override
     public void display(String indent) {
         System.out.println(indent + "Product: " + name + " - ₹" + price);
     }
@@ -26,8 +28,8 @@ class Product implements CartItem {
 
 // Represents a bundle of products
 class ProductBundle implements CartItem {
-    private String bundleName;
-    private List<Product> products = new ArrayList<>();
+    private final String bundleName;
+    private final List<Product> products = new ArrayList<>();
 
     public ProductBundle(String bundleName) {
         this.bundleName = bundleName;
@@ -37,6 +39,7 @@ class ProductBundle implements CartItem {
         products.add(product);
     }
 
+    @Override
     public double getPrice() {
         double total = 0;
         for (Product product : products) {
@@ -46,6 +49,7 @@ class ProductBundle implements CartItem {
         return total;
     }
 
+    @Override
     public void display(String indent) {
         System.out.println(indent + "Bundle: " + bundleName);
         for (Product product : products) {
@@ -55,7 +59,7 @@ class ProductBundle implements CartItem {
 }
 
 // Main logic
-class Main {
+public class Main {
     public static void main(String[] args) {
         // Individual Items
         Product book = new Product("Book", 500);

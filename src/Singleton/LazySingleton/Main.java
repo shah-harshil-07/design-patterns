@@ -1,4 +1,4 @@
-package LazySingleton;
+package Singleton.LazySingleton;
 
 class LazySingletonExample {
     private static LazySingletonExample instance = null;

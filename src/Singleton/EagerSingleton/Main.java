@@ -1,4 +1,4 @@
-package EagerSingleton;
+package Singleton.EagerSingleton;
 
 class EagerSingletonExample {
     private static final EagerSingletonExample instance = new EagerSingletonExample();
