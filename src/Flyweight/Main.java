@@ -1,9 +1,9 @@
 import java.util.*;
 
 class TreeType {
-    private String name;
-    private String color;
-    private String texture;
+    private final String name;
+    private final String color;
+    private final String texture;
 
     public TreeType(String name, String color, String texture) {
         this.name = name;
@@ -26,11 +26,11 @@ class TreeType {
 
 class Tree {
     // Attributes that keep on changing 
-    private int x;
-    private int y;
+    private final int x;
+    private final int y;
 
     // Attributes that remain constant
-    private TreeType treeType;
+    private final TreeType treeType;
 
     public Tree(int x, int y, TreeType treeType) {
         this.x = x;
@@ -60,7 +60,7 @@ class TreeTypeFactory {
 }
 
 class Forest {
-    private List<Tree> trees = new ArrayList<>();
+    private final List<Tree> trees = new ArrayList<>();
 
     public void plantTree(int x, int y, String name, String color, String texture) {
         Tree tree = new Tree(x, y, TreeTypeFactory.getTreeType(name, color, texture));

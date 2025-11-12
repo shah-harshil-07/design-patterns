@@ -19,16 +19,19 @@ interface Playlist {
 }
 
 class YouTubePlaylist implements Playlist {
-    private ArrayList<Video> videos = new ArrayList<>();
+    private final ArrayList<Video> videos = new ArrayList<>();
 
+    @Override
     public void addVideo(Video video) {
         videos.add(video);
     }
 
+    @Override
     public ArrayList<Video> getVideos() {
         return videos;
     }
 
+    @Override
     public Iterator createIterator() {
         return new YouTubeIterator(this.videos);
     }
@@ -41,7 +44,7 @@ interface Iterator {
 
 class YouTubeIterator implements Iterator {
     private int position = 0;
-    private ArrayList<Video> videos;
+    private final ArrayList<Video> videos;
 
     public YouTubeIterator(ArrayList<Video> videos) {
         this.videos = videos;
@@ -51,16 +54,18 @@ class YouTubeIterator implements Iterator {
         this.videos.add(video);
     }
 
+    @Override
     public boolean hasNext() {
         return position < this.videos.size();
     }
 
+    @Override
     public Video next() {
         return this.hasNext() ? this.videos.get(position++) : null;
     }
 }
 
-class Main {
+public class Main {
     public static void main(String[] args) {
         YouTubePlaylist playlist = new YouTubePlaylist();
         playlist.addVideo(new Video("LLD Tutorial"));
