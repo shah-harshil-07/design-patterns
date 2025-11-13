@@ -1,4 +1,3 @@
-import java.util.*;
 
 abstract class NotificationSender {
     public final void send(String to, String message) {
@@ -39,14 +38,17 @@ class EmailNotification extends NotificationSender {
 
 // SMSNotification handles sending SMS messages
 class SMSNotification extends NotificationSender {
+    @Override
     public String composeMessage(String message) {
         return "[SMS] " + message.trim();
     }
 
+    @Override
     public void sendNotification(String to, String message) {
         System.out.println("Sending SMS to " + to + " with message: " + message);
     }
 
+    @Override
     public void postSendAnalytics(String to) {
         System.out.println("Custom SMS analytics for: " + to);
     }
