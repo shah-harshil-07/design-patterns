@@ -1,3 +1,5 @@
+package FacadeExample;
+
 class PaymentService {
     public void makePayment(String accountId, double amount) {
         System.out.println("Payment made of $" + amount + " by account: " + accountId);

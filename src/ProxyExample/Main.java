@@ -1,3 +1,5 @@
+package ProxyExample;
+
 import java.util.HashMap;
 
 interface VideDownloader {

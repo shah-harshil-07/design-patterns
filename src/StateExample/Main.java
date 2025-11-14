@@ -1,3 +1,5 @@
+package StateExample;
+
 class OrderContext {
     private OrderState currentState;
 

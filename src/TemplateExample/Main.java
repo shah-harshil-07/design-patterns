@@ -1,3 +1,4 @@
+package TemplateExample;
 
 abstract class NotificationSender {
     public final void send(String to, String message) {

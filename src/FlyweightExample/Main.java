@@ -1,3 +1,5 @@
+package FlyweightExample;
+
 import java.util.*;
 
 class TreeType {
